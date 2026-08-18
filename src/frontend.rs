@@ -25,15 +25,15 @@ pub fn frontend(args: Vec<String>) {
     };
 
     let text = &args[pos_right_arg + 2];
+
     match args[1].as_str() {
         "encrypt" => {
-            let left_shifted = typing.left_hand_shift(text, left);
-            let right_shifted = typing.right_hand_shift(&left_shifted, right);
-            println!("{}", right_shifted);
+            let ciphertext = typing.encrypt(text, left, right);
+            println!("{}", ciphertext);
             return;
         }
         "decrypt" => {
-            println!("Error: Under Construction. It's hard");
+            println!("Error: Under Construction. It's Hard!");
             return;
         }
         _ => {
